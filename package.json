@@ -1,0 +1,25 @@
+{
+  "name": "android-aapt",
+  "version": "1.0.0",
+  "description": "Android Asset Packaging Tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test_index.js",
+    "install": "node install.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linguofeng/android-aapt.git"
+  },
+  "keywords": [
+    "android",
+    "aapt",
+    "apk"
+  ],
+  "author": "linguofeng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/linguofeng/android-aapt/issues"
+  },
+  "homepage": "https://github.com/linguofeng/android-aapt#readme"
+}
