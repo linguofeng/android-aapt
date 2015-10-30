@@ -22,7 +22,6 @@ aapt.badging = function(apk_file, callback) {
         }
     }).on('close', function() {
         callback(null, manifest)
-        process.exit(0);
     });
 }
 
@@ -35,7 +34,7 @@ function parse_package(package_str) {
             var kv = str.split(/=/);
             ['name', 'versionName', 'versionCode'].forEach(function(key) {
                 if (key == kv[0]) {
-                    manifest[key == 'name' ? 'packageName' : key] = kv[1]
+                    manifest[key == 'name' ? 'packageName' : key] = kv[1].replace(/'/g, '')
                 }
             })
         })
@@ -47,6 +46,6 @@ function parse_package(package_str) {
 function parse_application_label(application_label_str) {
     var application_label_reg = /application-label/;
     if (application_label_reg.test(application_label_str)) {
-        return application_label_str.split(/:/)[1]
+        return application_label_str.split(/:/)[1].replace(/'/g, '')
     }
 }
